@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Navbar from 'react-bootstrap/Navbar'
+import { Navbar, NavItem, NavDropdown, MenuItem, Nav } from 'react-bootstrap';
 
 import logo from '../assets/images/logo.svg';
 import logoman from '../assets/images/logoman.png';
@@ -9,7 +9,7 @@ export default class NavBar extends Component {
     render() {
         return (
             <div className="react-navbar">
-                <Navbar bg="dark" variant="dark">
+                <Navbar>
                     <Navbar.Brand href="#home">
                         <img
                             alt=""
@@ -20,6 +20,11 @@ export default class NavBar extends Component {
                         />{' '}
       otaku browse 
     </Navbar.Brand>
+    <Nav className="mr-auto">
+      <Nav.Link href="#home">Home</Nav.Link>
+      <Nav.Link href="#features">Features</Nav.Link>
+      <Nav.Link href="#pricing">Pricing</Nav.Link>
+    </Nav>
                 </Navbar>
             </div>
         )

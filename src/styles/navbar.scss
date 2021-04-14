@@ -1,0 +1,27 @@
+
+$navbar-font-color-bgdark:rgba(188, 190, 220, 1);
+
+.navbar {
+  background: #2b2d42;
+  color: $navbar-font-color-bgdark;
+  .navbar-brand,
+  .nav-link {
+    color: $navbar-font-color-bgdark;
+    &:link{
+        color:$navbar-font-color-bgdark;
+    }
+    &:hover{
+        color: $navbar-font-color-bgdark;
+    }
+    &:visited{
+        color:$navbar-font-color-bgdark
+    }
+    &:active{
+        color:$navbar-font-color-bgdark;
+    }
+    .active{
+        color:$navbar-font-color-bgdark;
+    }
+  }
+  
+}
