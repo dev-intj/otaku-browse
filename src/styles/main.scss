@@ -1,13 +1,20 @@
 @import "~bootstrap/scss/bootstrap";
 
+*{
+    box-sizing: border-box;
+}
+
 body{
     font-family: Overpass,-apple-system,BlinkMacSystemFont,Segoe UI,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
     font-size: 1.6rem;
     margin:0;
+    padding:0;
+    background-color: #EDF1F5;
     -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%
 }
 
 @import "card.scss";
 @import "topcard.scss";
-@import "navbar.scss"
-
+@import "navbar.scss";
+@import "landing.scss"
