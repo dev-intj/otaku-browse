@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Container,Button } from 'react-bootstrap';
+import { Container,Button,Row,Col } from 'react-bootstrap';
 
 //icons
 import stats from '../assets/images/stats.svg';
@@ -10,15 +10,16 @@ import custom from '../assets/images/custom.svg';
 export default class CopyrightAndWelcome extends Component {
     render() {
         return (
-            <Container>
+            <Container className="mt-5">
                 <div className="landing">
                     {/* Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop */}
                     <h1 className="heading">The next-generation anime platform</h1>
                     <h2 className="sub-heading">Track, share, and discover your favorite anime and manga with AniList.</h2>
-                    <div className="feature-cards">
-                        <div className="feature-card">
+                    <Row className="feature-cards">
+                    <Col xs={12} md={6}>
+                    <div className="feature-card">
                             <div className="icon">
-                                <img src={stats} />
+                                <img src={stats} alt="stats section"/>
                             </div>
                             <div>
                                 <div className="title">
@@ -33,9 +34,11 @@ export default class CopyrightAndWelcome extends Component {
                             </div>
 
                         </div>
-                        <div className="feature-card">
+                    </Col>
+                    <Col xs={12} md={6}>
+                    <div className="feature-card">
                             <div className="icon">
-                                <img src={apps} />
+                                <img src={apps} alt="apps section"/>
                             </div>
                             <div>
                                 <div className="title">
@@ -48,9 +51,11 @@ export default class CopyrightAndWelcome extends Component {
                                 </div>
                             </div>
                         </div>
+                        </Col>
+                        <Col xs={12} md={6}>
                         <div className="feature-card">
                             <div className="icon">
-                                <img src={social} />
+                                <img src={social} alt="social section"/>
                             </div>
                             <div>
                                 <div className="title">
@@ -63,9 +68,11 @@ export default class CopyrightAndWelcome extends Component {
                                 </div>
                             </div>
                         </div>
+                        </Col>
+                        <Col xs={12} md={6}>
                         <div className="feature-card">
                             <div className="icon">
-                                <img src={custom} />
+                                <img src={custom} alt="custom section"/>
                             </div>
                             <div>
                                 <div className="title">
@@ -78,7 +85,9 @@ export default class CopyrightAndWelcome extends Component {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                        </Col>
+
+                    </Row>
                     <Button className="join-btn"><div className="label">Join Now</div></Button>
                 </div>
             </Container>

@@ -1,13 +1,15 @@
 
 import './styles/main.scss';
-import Navbar from './components/NavBar';
+import Navigationbar from './components/Navigationbar';
 
 import CAW from './components/CopyrightAndWelcome';
+
+
 function App() {
   return (
     <div className="App">
-      <Navbar/>
-     
+      <Navigationbar/>
+     <CAW/>
     </div>
   );
 }

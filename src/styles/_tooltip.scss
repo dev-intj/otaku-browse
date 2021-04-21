@@ -1,0 +1,127 @@
+/* 
+
+//default variables
+$zindex-tooltip:                    1070 !default;
+
+// Tooltips
+
+$tooltip-font-size:                 0.8rem !default;
+$tooltip-max-width:                 200px !default;
+$tooltip-color:                     black !default;
+$tooltip-bg:                        #EDF1F5 !default;
+$tooltip-border-radius:             20px !default;
+$tooltip-opacity:                   1 !default;
+$tooltip-padding-y:                 .25rem !default;
+$tooltip-padding-x:                 .5rem !default;
+$tooltip-margin:                    0 !default;
+
+$tooltip-arrow-width:               .8rem !default;
+$tooltip-arrow-height:              .4rem !default;
+$tooltip-arrow-color:               #EDF1F5 !default;
+
+// Form tooltips must come after regular tooltips
+$form-feedback-tooltip-padding-y:     $tooltip-padding-y !default;
+$form-feedback-tooltip-padding-x:     $tooltip-padding-x !default;
+$form-feedback-tooltip-font-size:     0.8rem !default;
+$form-feedback-tooltip-line-height:   $line-height-base !default;
+$form-feedback-tooltip-opacity:       1 !default;
+$form-feedback-tooltip-border-radius: 20px !default;
+
+
+/* VARIABLES OF NAV: 
+bg:#EDF1F5;
+color:black;
+opacity:1;
+border-radius:20px;
+
+font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+    outline: 0;
+*/
+$tooltip-arrow-color:#ffffff;
+// Base class
+.tooltip {
+  @include reset-text();
+  @include font-size(0.8rem);
+  &.show { 
+    
+  }
+
+  .arrow {
+
+    &::before {
+    }
+  }
+}
+
+.bs-tooltip-top {
+  .arrow {
+    &::before {
+      border-top-color: $tooltip-arrow-color;
+    }
+  }
+}
+.bs-tooltip-bottom {
+  .arrow {
+    &::before {
+      border-bottom-color:$tooltip-arrow-color;
+    }
+  }
+}
+.bs-tooltip-right {
+  .arrow {
+    &::before {
+      border-right-color: $tooltip-arrow-color;
+    }
+  }
+}
+.bs-tooltip-left {
+  .arrow {
+    &::before {
+      border-left-color: $tooltip-arrow-color;
+    }
+  }
+}
+
+// Wrapper for the tooltip content
+.tooltip-inner {
+  background-color:white;
+  color:black;
+}
+.browse-tooltip-wrap{
+  display:flex;
+  flex-direction:column;
+  padding-bottom:0px;
+  
+  *{
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+    outline: 0;
+  }
+  .browse-tool-column{
+    width:300px;
+   
+    .media{
+      svg{
+        color:rgb(148, 148, 148);
+        height:25px;
+        justify-items:center;
+        background-color:red;
+      }
+      .title{
+        font-size: 1rem;
+        color:rgb(148, 148, 148);
+        text-align:left;
+      }
+      .sub-title{
+        text-align:left;
+        font-size: 0.6rem;
+        color:grey;
+      }
+    }
+  }
+}
