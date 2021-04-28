@@ -1,0 +1,66 @@
+.filter-component {
+  .filter_burger {
+    background-color: white;
+    color: grey;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    border-color: none;
+    border: 0px;
+    text {
+      color: red;
+    }
+    ::after {
+      all: unset;
+    }
+  }
+
+  .filter_search {
+    display: flex;
+    justify-content: center;
+    .input-group {
+      position: absolute;
+      bottom: 0;
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    }
+    .input-group-prepend {
+      .input-group-text {
+        background-color: white;
+        border: 0px;
+      }
+    }
+    .form-control {
+      background-color: white;
+      border: 0px;
+    }
+  }
+
+  .filter_button_lg {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  
+    width: 100%;
+    .dropdown {
+      button {
+        height: 100%;
+        width: 100%;
+        background-color: white;
+        color: grey;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        border-color: none;
+        border: 0px;
+        text {
+          color: red;
+        }
+        ::after {
+          all: unset;
+        }
+      }
+    }
+    .dropdown-toggle {
+      ::after {
+        all: unset;
+      }
+    }
+  }
+  
+}

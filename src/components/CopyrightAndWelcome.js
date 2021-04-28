@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Container,Button,Row,Col } from 'react-bootstrap';
-
+import { ArrowRight } from 'react-bootstrap-icons';
 //icons
 import stats from '../assets/images/stats.svg';
 import apps from '../assets/images/apps.svg';
@@ -10,8 +10,7 @@ import custom from '../assets/images/custom.svg';
 export default class CopyrightAndWelcome extends Component {
     render() {
         return (
-            <Container className="mt-5">
-                <div className="landing">
+            <Container className="landing mt-lg-5 mt-md-0" fluid="lg">
                     {/* Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop */}
                     <h1 className="heading">The next-generation anime platform</h1>
                     <h2 className="sub-heading">Track, share, and discover your favorite anime and manga with AniList.</h2>
@@ -86,10 +85,13 @@ export default class CopyrightAndWelcome extends Component {
                             </div>
                         </div>
                         </Col>
-
+                        
                     </Row>
-                    <Button className="join-btn"><div className="label">Join Now</div></Button>
-                </div>
+                    <Col className="d-flex justify-content-center join-button-col">
+                        <Button className="join-button" size="lg">
+                        <div className="label">Join Now <ArrowRight/></div>
+                        </Button>
+                    </Col>
             </Container>
         )
     }

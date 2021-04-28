@@ -3,8 +3,7 @@
     background-color:#0A1625;
     border-radius: 20px;
     color:white;
-    padding-left:50px;
-    padding-right:50px;
+    width:100%;
     padding-bottom:25px;
     padding-top:50px;
     font-weight: 500;
@@ -31,6 +30,7 @@
     user-select: none;
     font-weight: 500;
 }
+
 }
 .feature-cards{
     justify-content: center;
@@ -51,5 +51,39 @@
     .description{
         color: #acd5f2;
         font-size: 0.8rem;
+    }
+}
+
+
+.join-button-col{
+    box-shadow: 0 2px 40px rgba(0, 0, 0, 0.4);
+    transition: box-shadow 0.4s ease;
+    z-index:1;
+    .join-button{
+        z-index:2;
+        background-color:#3577FF;
+        position:absolute;
+        border-radius:30px;
+        margin: 0 auto;
+        align-items: center;
+        width:20%;
+        font-size: 1rem;
+        font-weight: 500;
+        line-height: 142%;
+    }
+    :hover{
+        box-shadow: 0 2px 43px rgba(8, 150, 230, 0.6);
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .landing{
+        border-radius:0px;
+    }
+    .landing-container{
+        margin-top: 0;
+    }
+    .join-button{
+        width:40%;
     }
 }
