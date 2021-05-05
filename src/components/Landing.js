@@ -7,7 +7,7 @@ import apps from '../assets/images/apps.svg';
 import social from '../assets/images/social.svg';
 import custom from '../assets/images/custom.svg';
 
-export default class CopyrightAndWelcome extends Component {
+export default class Landing extends Component {
     render() {
         return (
             <Container className="landing mt-lg-5 mt-md-0" fluid="lg">
