@@ -41,6 +41,7 @@
     -ms-user-select: none;
     user-select: none;
     .feature-card{
+        padding:25px;
         display: grid;
         grid-template-columns: 80px auto;
         grid-gap: 40px;

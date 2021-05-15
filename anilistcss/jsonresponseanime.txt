@@ -1,0 +1,43 @@
+
+/*
+
+typical response:
+{"request_hash":"request:anime:f0bc033cac560e7ab416d7510ac6fae9abf1c837",
+"request_cached":true,
+"request_cache_expiry":34343,
+"mal_id":42938,
+"url":"https:\/\/myanimelist.net\/anime\/42938\/Fruits_Basket__The_Final",
+"image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1803\/113269.jpg",
+"trailer_url":"https:\/\/www.youtube.com\/embed\/Ip8Btv2t_6c?enablejsapi=1&wmode=opaque&autoplay=1",
+"title":"Fruits Basket: The Final",
+"title_english":null,
+"title_japanese":"\u30d5\u30eb\u30fc\u30c4\u30d0\u30b9\u30b1\u30c3\u30c8 The Final",
+"title_synonyms":["Fruits Basket 3rd Season","Fruits Basket (2019) 3rd Season","Furuba"],
+"type":"TV",
+"source":"Manga","
+episodes":null,
+"status":"Currently Airing",
+"airing":true,
+"aired":{"from":"2021-04-06T00:00:00+00:00","to":null,"prop":{"from":{"day":6,"month":4,
+"year":2021},"to":{"day":null,"month":null,"year":null}},"string":"Apr 6, 2021 to ?"},
+"duration":"23 min",
+"rating":"PG-13 - Teens 13 or older",
+"score":8.79,
+"scored_by":14363,
+"rank":26,
+"popularity":1192,
+"members":131572,
+"favorites":2181,
+"synopsis":"[synopsis]",
+"background":null, ?? !=null then trailer_url
+"premiered":"Spring 2021",
+"broadcast":"Tuesdays at 01:30 (JST)",
+"related":{"Adaptation":[{"mal_id":102,"type":"manga","name":"Fruits Basket","url":"https:\/\/myanimelist.net\/manga\/102\/Fruits_Basket"}],
+"Prequel":[{"mal_id":40417,"type":"anime","name":"Fruits Basket 2nd Season","url":"https:\/\/myanimelist.net\/anime\/40417\/Fruits_Basket_2nd_Season"}]},
+"producers":[{"mal_id":2174,"type":"anime","name":"TMS Music","url":"https:\/\/myanimelist.net\/anime\/producer\/2174\/TMS_Music"}],
+"licensors":[{"mal_id":102,"type":"anime","name":"Funimation","url":"https:\/\/myanimelist.net\/anime\/producer\/102\/Funimation"}],
+"studios":[{"mal_id":73,"type":"anime","name":"TMS Entertainment","url":"https:\/\/myanimelist.net\/anime\/producer\/73\/TMS_Entertainment"}],
+"genres":[{"mal_id":4,"type":"anime","name":"Comedy","url":"https:\/\/myanimelist.net\/anime\/genre\/4\/Comedy"},{"mal_id":8,"type":"anime","name":"Drama","url":"https:\/\/myanimelist.net\/anime\/genre\/8\/Drama"},{"mal_id":22,"type":"anime","name":"Romance","url":"https:\/\/myanimelist.net\/anime\/genre\/22\/Romance"},{"mal_id":25,"type":"anime","name":"Shoujo","url":"https:\/\/myanimelist.net\/anime\/genre\/25\/Shoujo"},{"mal_id":36,"type":"anime","name":"Slice of Life","url":"https:\/\/myanimelist.net\/anime\/genre\/36\/Slice_of_Life"},{"mal_id":37,"type":"anime","name":"Supernatural","url":"https:\/\/myanimelist.net\/anime\/genre\/37\/Supernatural"}],
+"opening_themes":["\"Pleasure\" by WARPs UP"],
+"ending_themes":["\"Haru Urara (\u6625\u3046\u3089\u3089)\" by GENIC"]}
+*/

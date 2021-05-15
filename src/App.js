@@ -15,14 +15,14 @@ function App() {
   return (
     <div className="App">
       
-      <HashRouter>
+      <Router>
         <Switch>
           <Route exact path='/' component={() => <Home/>} />
-          <Route  path='/:type/:id/:title' component={() => <DetailCard/>} />
+          <Route  path='/details/:type/:id/:title/:tab' component={() => <DetailCard/>} />
           <Route  path='/search/:type' component={() => <Search/>} />
           <Route path='/404' component={() => <Error/>} />
         </Switch>
-      </HashRouter>
+      </Router>
     </div>
   );
 }

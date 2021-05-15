@@ -1,0 +1,146 @@
+// hero 
+.details-page {
+  &.header {
+    height: 250px;
+    background-color: white;
+  }
+  &.header-body {
+    padding-bottom:20px;
+    .cover {
+      img {
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        border-radius: 2px;
+        box-shadow: 0 0 29px rgba(49, 54, 68, 25%);
+        margin-top: 15px;
+        margin: -95px 0 0 0;
+      }
+      .actions {
+        display: flex;
+        flex-direction: row;
+        padding: 0;
+        margin-right: 0;
+        margin-left: 0;
+        button {
+          background-color: #3db4f2;
+          border-color: #3db4f2;
+        }
+        .addtolist {
+          padding-left: 0;
+          padding-top: 5px;
+          Button {
+            width: 100%;
+            float: left;
+          }
+        }
+        .heart-it {
+          padding-right: 0;
+          padding-top: 5px;
+          button {
+            float: right;
+          }
+        }
+      }
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      padding-top: 25px;
+    }
+    .title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: gray;
+    }
+    .synopsis {
+      font-size: 0.8rem;
+      font-weight: 600;
+      line-height: 1.8;
+      color: gray;
+    }
+
+  }
+}
+
+// sidebar
+.details-page,
+.content {
+  .sidebar {
+    .info {
+      width: 100%;
+      border-radius: 0.25rem;
+      border: 0px;
+      background-color: white;
+      padding: 18px;
+      .data-set {
+        padding: 5px;
+      }
+      .type,
+      .value {
+        width: 100%;
+      }
+      .type {
+        font-size: 1rem;
+        font-weight: 600;
+        padding-bottom: 5px;
+        color: grey;
+      }
+      .value {
+        font-size: 1rem;
+        font-weight: 400;
+        color: lightgrey;
+      }
+    }
+    .data-set {
+      padding-top: 10px;
+      padding-bottom: 5px;
+      .rank,
+      .popular {
+        button {
+          width: 100%;
+          color: grey;
+          border: 0px;
+          background-color: white;
+          &:hover {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+
+    .tags {
+      button {
+        width: 100%;
+        color: grey;
+        border: 0px;
+        background-color: white;
+        &:hover {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}
+
+// main content navbar
+.details-page{
+  .main-content-navbar{
+    display:flex;
+    justify-content: flex-end; 
+    .btn-group{
+      
+    }
+    .btn{
+    }
+  }
+}
+
+// main content 
+.details-page{
+  .main-content{
+    padding-top:10px;
+  }
+}

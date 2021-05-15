@@ -2,11 +2,10 @@
   .card {
     border: none;
     background-color: transparent;
-    height: 400px;
-    width:100%;
     position: relative;
     text-align: left;
-    width: 185px;
+    max-width: 185px;
+    
   }
   .card-img-top {
     height: 250px;
@@ -14,14 +13,14 @@
     box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.15);
   }
   .card-body {
-    margin:0;
-    padding:0;
-    padding-top:1rem;
-    padding-left:0.2rem;    
+    margin: 0;
+    padding: 0;
+    padding-top: 1rem;
+    padding-left: 0.2rem;
   }
-  .card-title{
-    font-size:1rem;
-    color:gray;
+  .card-title {
+    font-size: 1rem;
+    color: gray;
   }
   :hover {
     .card-title {
@@ -29,6 +28,7 @@
     }
   }
 }
+
 /* 
 has rank is wide style
 .media-card[data-v-fe021542] {
