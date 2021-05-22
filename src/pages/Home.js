@@ -2,7 +2,7 @@ import React from "react";
 
 import Navigationbar from "../components/Navigationbar";
 import Landing from "../components/Landing";
-import Filter from "../components/Filter";
+import Search from "../containers/Search/Search";
 
 
 //import tabs
@@ -14,9 +14,7 @@ const Home = () => {
         <>
             <Navigationbar />
             <Landing />
-            <Filter />
-
-
+            <Search />
             {/* https://jikan.docs.apiary.io/#reference/0/top/top-request-example+schema */}
 
             {/* POPULAR THIS SEASON */}

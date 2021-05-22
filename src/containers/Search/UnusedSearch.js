@@ -3,13 +3,11 @@ import { Container, Button, Row, Col, InputGroup, FormControl } from 'react-boot
 //importing bootstrap icons
 import { Search, Sliders } from 'react-bootstrap-icons';
 //jsx component, read name for obvious explanation
-import PopoverStickOnHover from '../utils/PopoverStickOnHover';
+import PopoverStickOnHover from '../../utils/PopoverStickOnHover';
 
-import Card from "./Card";
+import Filter_Button from "../../components/FilterComponents/Filter_Button";
 
-import Filter_Button from "./FilterComponents/Filter_Button";
-
-function Filter() {
+function Filter(props) {
   const [GenresState, setGenresState] = useState("");
   
   const query_result = undefined;
