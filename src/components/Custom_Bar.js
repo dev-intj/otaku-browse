@@ -45,7 +45,7 @@ class Custom_Bar extends Component {
         const card5class = "d-none d-xl-block"
         const responsiveclass = ""
         return (
-            <Container className="d-flex justify-content-between align-items-center CustomBar" fluid="lg">
+            <Container className="pt-3 pb-3 d-flex justify-content-between align-items-center CustomBar" fluid="lg">
                 <Row className="d-flex justify-content-between">
 
                     <Col xs={12} xl={12} md={12} lg={12}>

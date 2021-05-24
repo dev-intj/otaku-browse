@@ -66,6 +66,15 @@ export default{
         { value: 'china', label: 'China' },
         { value: 'taiwan', label: 'Taiwan' },
       ],
+      Format_options : [
+        { value: 'TV', label: 'TV Show' },
+        { value: 'south_korea', label: 'Movie' },
+        { value: 'china', label: 'TV Short' },
+        { value: 'china', label: 'Special' },
+        { value: 'china', label: 'OVA' },
+        { value: 'china', label: 'ONA' },
+        { value: 'china', label: 'Music' }
+      ],
       source_material_options : [
         { value: 'original', label: 'Original' },
         { value: 'manga', label: 'Manga' },

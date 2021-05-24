@@ -1,75 +1,92 @@
-import React from 'react'
+import React,{Component} from 'react'
 import { Container, Button, Row, Col, InputGroup, FormControl } from 'react-bootstrap';
 //importing bootstrap icons
 import { Search, Sliders } from 'react-bootstrap-icons';
 //jsx component, read name for obvious explanation
 import PopoverStickOnHover from '../../utils/PopoverStickOnHover';
 
-import Filter_Button from "../../components/FilterComponents/Filter_Button";
+import Filter_Button from "./components/Filter_Button";
+
+//import different options for the buttons
+import data from "./components/FilterComponent-Data";
 
 // import react redux functionality
-import { useSelector,useDispatch} from 'react-redux';
-import { createSelector} from 'reselect';
-import { makeSelectType } from './selectors';
+import { connect } from 'react-redux';
+import { setType } from './actions';
 
-const stateSelector = createSelector(makeSelectType, (type) => ({
-    type
-}));
 
-const ActionDispatch = (dispatch) => ({
-    setType: (type) => dispatch(setType(type))
-});
-
-export default function SearchJSX(props){
-        //setType(value)
-        //https://youtu.be/FqSabub_yNI?t=3033
-        const {type} = useSelector(stateSelector);
-        const {setType} = ActionDispatch(useDispatch());
-
-        console.log(type)  
-        const Filter_Overlay = () => {
-            return (
-                <h1>test</h1>
-            );
-        };
-
+class SearchJSX extends Component {
+    constructor(props) {
+        super(props);
+      }
+    
+    render() {
+    const Filter_Overlay = () => {
         return (
-            <>
-                <Container className="mt-5 mb-5 filter-component" fluid="lg" >
-                    <Row>
-                        <Col className="d-lg-none d-md-block" lg={12}>
-                            Browse Anime
-                </Col>
+            <h1>test</h1>
+        );
+    };
 
-                        <Col md={10} lg={2} className="filter_search">
-                            <InputGroup>
-                                <InputGroup.Prepend>
-                                    <InputGroup.Text id="basic-addon1"><Search /></InputGroup.Text>
-                                </InputGroup.Prepend>
-                                <FormControl
-                                    placeholder="Username"
-                                    aria-label="Username"
-                                    aria-describedby="basic-addon1"
-                                />
-                            </InputGroup>
-                        </Col>
+    const handleHeroBrowser = () => {
+        this.props.typeAction("anime");
+        console.log(this.props)
+    }
 
-                        <Col lg={9} className="filter_button_lg">
-                            <Filter_Button />
-                            <Filter_Button />
-                            <Filter_Button />
-                            <Filter_Button />
-                        </Col>
+    return (
+        <>
+            <Container className="mt-5 mb-5 pt-5 filter-component" fluid="lg" >
+                <Row>
+                    {/* Hero Button */}
+                    <Col className="d-lg-none d-md-block" lg={12}>
+                        <Button onClick={handleHeroBrowser}>Browse {this.props.SearchReducer.type}</Button>
+                    </Col>
 
-                        <Col md={2} lg={1}>
-                            <PopoverStickOnHover component={<Filter_Overlay />} placement="bottom" onMouseEnter={() => { }} delay={200}>
-                                <Button className="filter_burger"><Sliders color="grey" /></Button>
-                            </PopoverStickOnHover>
-                        </Col>
+                    {/* Search Button*/}
+                    <Col xs={11} sm={11} md={11} lg={2} xl={2} className="filter_search">
+                        <div className="name">Search</div>
+                        <InputGroup>
+                            <InputGroup.Prepend>
+                                <InputGroup.Text id="basic-addon1"><Search /></InputGroup.Text>
+                            </InputGroup.Prepend>
+                            <FormControl
+                                placeholder="Username"
+                                aria-label="Username"
+                                aria-describedby="basic-addon1"
+                            />
+                        </InputGroup>
+                    </Col>
 
-                    </Row>
+                    {/* Button toolbar, only on md */}
+                    <Col md={9} className=" d-none d-sm-none d-lg-block d-md-none d-xl-block ">
+                        <div className="filter_button_lg">
+                            <Filter_Button mode="Genres" />
+                            <Filter_Button mode="Years" />
+                            <Filter_Button mode="Seasons" />
+                            <Filter_Button mode="Formats" />
+                        </div>
+                    </Col>
 
-                </Container>
-            </>
-        )
+                    {/* Button Burger */}
+                    <Col xs={1} sm={1} md={1} lg={1} xl={1}>
+                        <div className="name">&nbsp;</div>
+                        <PopoverStickOnHover component={<Filter_Overlay />} placement="bottom" onMouseEnter={() => { }} delay={200}>
+                            <Button className="filter_burger"><Sliders color="grey" /></Button>
+                        </PopoverStickOnHover>
+                    </Col>
+                </Row>
+            </Container>
+        </>
+    )
+    }
 }
+const mapStateToProps = (state) => ({
+    ...state
+  });
+  const mapDispatchToProps = (dispatch) => ({
+    typeAction: (payload) => dispatch(setType(payload))
+  });
+  
+  const connectToStore = connect(mapStateToProps, mapDispatchToProps)
+  const ConnectedComponent = connectToStore(SearchJSX)
+  
+  export default connect(mapStateToProps, mapDispatchToProps)(SearchJSX);

@@ -8,7 +8,7 @@ const defaultState = {
 export default function SearchReducer(state = defaultState, action){
     switch(action.type){
         case ActionTypes.SET_TYPE:
-            return { ...state, users:action.payload };
+            return { ...state, type:action.payload };
         default:
             return state;
     }
