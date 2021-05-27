@@ -2,7 +2,7 @@ import React from "react";
 
 import Navigationbar from "../components/Navigationbar";
 import Landing from "../components/Landing";
-import Search from "../containers/Search/Search";
+import Search from "../containers/Search/SearchBar";
 
 
 //import tabs

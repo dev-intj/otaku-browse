@@ -8,19 +8,24 @@ export default{
         { value: 'users', label: 'Users' },
       ],
       Genres_options : [
-        { value: 'action', label: 'Action' },
-        { value: 'adventure', label: 'Adventure' },
-        { value: 'comedy', label: 'Comedy' },
-        { value: 'drama', label: 'Drama' },
-        { value: 'ecchi', label: 'Ecchi' },
-        { value: 'fantasy', label: 'Fantasy' },
-        { value: 'horror', label: 'Horror' },
-        { value: 'mahou-shoujo', label: 'Mahou Shoujo' },
-        { value: 'mecha', label: 'Mecha' },
-        { value: 'music', label: 'Music' },
-        { value: 'mystery', label: 'Mystery' },
-        { value: 'psychological', label: 'Psychological' },
-        { value: 'romance', label: 'Romance' }
+        { value: '1', label: 'Action' },
+        { value: '2', label: 'Adventure' },
+        { value: '3', label: 'Cars' },
+        { value: '4', label: 'Comedy' },
+        { value: '5', label: 'Dementia' },
+        { value: '6', label: 'Demons' },
+        { value: '7', label: 'Mystery' },
+        { value: '8', label: 'Drama' },
+        { value: '9', label: 'Ecchi' },
+        { value: '10', label: 'Fantasy' },
+        { value: '11', label: 'Game' },
+        { value: '12', label: 'Hentai' },
+        { value: '13', label: 'Historical' },
+        { value: '14', label: 'Horror' },
+        { value: '15', label: 'Kids' },
+        { value: '16', label: 'Magic' },
+        { value: '17', label: 'Martial Arts' },
+        { value: '18', label: 'Mecha' },
       ],
       Season_options : [
         { value: 'winter', label: 'Winter' },
@@ -66,16 +71,7 @@ export default{
         { value: 'china', label: 'China' },
         { value: 'taiwan', label: 'Taiwan' },
       ],
-      Format_options : [
-        { value: 'TV', label: 'TV Show' },
-        { value: 'south_korea', label: 'Movie' },
-        { value: 'china', label: 'TV Short' },
-        { value: 'china', label: 'Special' },
-        { value: 'china', label: 'OVA' },
-        { value: 'china', label: 'ONA' },
-        { value: 'china', label: 'Music' }
-      ],
-      source_material_options : [
+      Source_material_options : [
         { value: 'original', label: 'Original' },
         { value: 'manga', label: 'Manga' },
         { value: 'light_novel', label: 'Light Novel' },
@@ -85,8 +81,4 @@ export default{
         { value: 'doujinshi', label: 'Doujinshi' },
         { value: 'other', label: 'Other' },
       ],
-      some_array:[
-        {value:"some1", label:"something1"},
-        {value:"some2", label:"something2"},
-      ]
 }

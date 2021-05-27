@@ -1,11 +1,11 @@
 .anilist-card {
+  justify-content: center;
   .card {
     border: none;
     background-color: transparent;
     position: relative;
     text-align: left;
     max-width: 185px;
-    
   }
   .card-img-top {
     height: 250px;
@@ -21,6 +21,11 @@
   .card-title {
     font-size: 1rem;
     color: gray;
+    margin: 0;
+    width: 185px; 
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   :hover {
     .card-title {
@@ -28,7 +33,15 @@
     }
   }
 }
-
+.results_section{
+  justify-content: center;
+  .col{
+    padding-top:2rem;
+    min-width:200px;
+    display:flex;
+    justify-content: center;
+  }
+}
 /* 
 has rank is wide style
 .media-card[data-v-fe021542] {

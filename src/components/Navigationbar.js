@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Nav, Button, Tooltip, OverlayTrigger, Row, Col, Media, Container } from 'react-bootstrap';
+import { Navbar, Nav, Button,Row, Col, Media, Container } from 'react-bootstrap';
 import PopoverStickOnHover from '../utils/PopoverStickOnHover';
 //import logo from '../assets/images/logo.svg';
 import logoman from '../assets/images/logoman.png';
@@ -32,7 +32,7 @@ function Navigationbar() {
 
         <Navbar className="d-none d-lg-block">
             <Container>
-                <Navbar.Brand href="#home">
+                <Navbar.Brand href="/">
                     <img
                         alt="navbar logo"
                         src={logoman}
