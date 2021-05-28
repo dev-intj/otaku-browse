@@ -50,6 +50,7 @@ class SearchPage extends Component {
     const year = this.props.SearchReducer.year;
     const genre = this.props.SearchReducer.genre;
     const format = this.props.SearchReducer.format;
+    const search = this.props.SearchReducer.search;
     return (
       <>
         <Navigationbar />
@@ -59,6 +60,8 @@ class SearchPage extends Component {
           <h1>season: {season}</h1>
           <h1>year: {year}</h1>
           <h1>format: {format}</h1>
+          <h1>search: {search}</h1>
+          <h1>type: {type}</h1>
         </Container>
         <Container>
           {ResultsSection()}
@@ -68,26 +71,9 @@ class SearchPage extends Component {
 
   }
 
-  static getDerivedStateFromProps(props, current_state) {
-    //in case of updated props, update state, and then do a new fetch from the api
-    if (current_state.value !== props.SearchReducer.value) {
-      return {
-        value: props.SearchReducer.value
-      }
-    }
-    return (null)
-  }
-
-  async componentDidUpdate() {
-    const url = this.buildquery();
-    if (this.state.url != url) {
-      this.AxiosGet();
-      console.log('recalculating')
-      this.setState({ url: url });
-    }
-  }
-
+  //fetch data
   AxiosGet = () => {
+    this.setState({ data: [] });
     const url = this.buildquery();
     axios.get(`${url}`)
       .then(res => {
@@ -96,6 +82,7 @@ class SearchPage extends Component {
         this.setState({ data: data });
       })
       .catch(error => {
+        this.setState({ data: [] });
         console.log("there was an error fetching from my anime list.")
       });
   }
@@ -106,7 +93,7 @@ class SearchPage extends Component {
     const year = this.props.SearchReducer.year;
     const genre = this.props.SearchReducer.genre;
     const format = this.props.SearchReducer.format;
-    const search = '';
+    const search = this.props.SearchReducer.search;
     var url = '';
     if (search != '') {
       url = 'https://api.jikan.moe/v3/search/' + type + '?q=' + (!search ? '' : search) + (!genre ? '' : '&genre=' + genre) + (!year ? '' : '&year=' + year);
@@ -125,8 +112,28 @@ class SearchPage extends Component {
       year: this.props.SearchReducer.year,
       format: this.props.SearchReducer.format,
       type: this.props.SearchReducer.type,
+      search: this.props.SearchReducer.search,
       url: url,
     })
+  }
+
+  async componentDidUpdate() {
+    const url = this.buildquery();
+    if (this.state.url != url) {
+      this.AxiosGet();
+      console.log('recalculating')
+      this.setState({ url: url });
+    }
+  }
+
+  static getDerivedStateFromProps(props, current_state) {
+    //in case of updated props, update state, and then do a new fetch from the api
+    if (current_state.value !== props.SearchReducer.value) {
+      return {
+        value: props.SearchReducer.value
+      }
+    }
+    return (null)
   }
 }
 

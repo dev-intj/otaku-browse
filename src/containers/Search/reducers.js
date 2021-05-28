@@ -1,7 +1,7 @@
 import { ActionTypes } from './constants';
 
 const defaultState = {
-    
+    search:'',
     type: 'anime',
     genre: '',
     year: 2021,
@@ -22,6 +22,8 @@ export default function SearchReducer(state = defaultState, action) {
             return { ...state, season: action.payload };
         case ActionTypes.SET_YEAR:
             return { ...state, year: action.payload };
+        case ActionTypes.SET_SEARCH:
+            return { ...state, search: action.payload };
         default:
             return state;
     }

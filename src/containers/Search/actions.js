@@ -25,3 +25,7 @@ export const setSeason = (season) => ({
     payload:season
 })
 
+export const setSearch = (search) => ({
+    type:ActionTypes.SET_SEARCH,
+    payload:search
+})

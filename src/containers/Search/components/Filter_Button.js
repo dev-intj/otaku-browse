@@ -5,8 +5,8 @@ import data from "./FilterComponent-Data";
 
 // import react redux functionality
 import { connect } from 'react-redux';
-import { setFormat,setGenre,setYear,setSeason } from '../actions';
-
+import { setFormat, setGenre, setYear, setSeason } from '../actions';
+import { withRouter } from 'react-router-dom';
 
 
 class Filter_Button extends Component {
@@ -19,6 +19,9 @@ class Filter_Button extends Component {
   }
 
   handleSelect = (e) => {
+    if (this.props.location.pathname === '/') {
+      this.props.history.push('/search')
+    }
     switch (this.props.mode) {
       case "Genres":
         this.props.genreAction(e);
@@ -108,7 +111,9 @@ class Filter_Button extends Component {
         this.setState({ options: data.Genres_options });
     }
   }
+
 }
+
 const mapStateToProps = (state) => ({
   ...state
 });
@@ -122,4 +127,4 @@ const mapDispatchToProps = dispatch => ({
 const connectToStore = connect(mapStateToProps, mapDispatchToProps)
 const ConnectedComponent = connectToStore(Filter_Button)
 
-export default connect(mapStateToProps, mapDispatchToProps)(Filter_Button);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Filter_Button));

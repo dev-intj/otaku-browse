@@ -4,4 +4,5 @@ export const ActionTypes = {
     SET_SEASON: "app/containers/Search/SET_SEASON",
     SET_YEAR: "app/containers/Search/SET_YEAR",
     SET_GENRE: "app/containers/Search/SET_GENRE",
+    SET_SEARCH: "app/containers/Search/SET_SEARCH",
 }

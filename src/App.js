@@ -11,7 +11,7 @@ import Home from './pages/Home';
 import DetailCard from './pages/DetailCard';
 import Error from './pages/Error';
 import SearchPage from './containers/Search/Results/SearchPage';
-
+import  React_Footer from './components/Footer';
 function App() {
   return (
     <div className="App">
@@ -23,6 +23,7 @@ function App() {
           <Route path='/search' component={() => <SearchPage />} ></Route>
           <Route path='/404' component={() => <Error />} ></Route>
         </Switch>
+        < React_Footer/>
       </Router>
 
     </div>
