@@ -9,7 +9,6 @@ const defaultState = {
     format: '',
 };
 
-
 export default function SearchReducer(state = defaultState, action) {
     switch (action.type) {
         case ActionTypes.SET_TYPE:

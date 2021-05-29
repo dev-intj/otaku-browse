@@ -7,7 +7,7 @@ export default{
         { value: 'studios', label: 'Studios' },
         { value: 'users', label: 'Users' },
       ],
-      Genres_options : [
+      Genre_options : [
         { value: '1', label: 'Action' },
         { value: '2', label: 'Adventure' },
         { value: '3', label: 'Cars' },
