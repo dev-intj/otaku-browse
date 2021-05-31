@@ -40,6 +40,7 @@ $navbar-background-color-bgdark: rgba(43, 45, 66, 1);
 .navbar {
   background: $navbar-background-color-bgdark;
   color: $navbar-font-color-bgdark;
+  
   .navbar-brand,
   .nav-link {
     &:link {
@@ -57,5 +58,104 @@ $navbar-background-color-bgdark: rgba(43, 45, 66, 1);
     .active {
       color: $navbar-font-color-bgdark;
     }
+  }
+}
+$tooltip-color:#B3C0CC;
+$tooltip-hover-color:#647380;
+.bs-popover-bottom{
+  border:0;
+}
+// alignment, padding and color
+ .browse-tooltip-wrap{
+  flex-direction:column;
+   padding-left:1rem;
+   padding-right:1rem;
+   border:0;
+   .browse-tool-column{
+     padding-top:1rem;
+     
+   }
+   .box-column{
+     // why tho.
+     background-color:#EDF1F5;
+     left:-1px;
+     right:0;
+     padding:0;
+     margin:0;
+     min-width:100.5%;
+     border-radius:0 0 3px 3px;
+   }
+   .icon{
+    padding-right:1rem;
+   }
+
+   .browse-tool-column,.box-column{
+    color:$tooltip-color;
+    .title,svg{
+      color:#76838F;
+    }
+    button{
+      &:hover{
+        color:$tooltip-hover-color;
+        .title,svg{
+          color:#647380;
+        }
+      }
+    }
+   }
+
+     
+ }
+
+.browse-tooltip-wrap{
+  
+  .box-column{
+    margin-top:1rem;
+    display:flex;
+    padding:1rem;
+    button{
+      text-align:left;
+      color:#8593a0;
+      background-color:transparent;
+      border:0;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+  }
+}
+
+.browse-tool-column{
+  .icon{
+    button{
+      padding:0;
+      margin:0;
+      position: relative;
+      left: 50%;
+      border:0;
+      background-color:transparent;
+      svg{
+        font-size:2rem;
+      }
+    }
+  }
+  .links{
+    flex-direction: column;
+  }
+  .title{
+    all:unset;
+    text-align:left;
+    font-size: 1rem;
+    font-weight: 500;
+    
+  }
+  .mini-links{
+    padding:0;
+    margin:0;
+    button{
+      all:unset;
+      padding-right:0.6rem;
+      font-size:0.8rem;
+      font-weight: 500;
+    } 
   }
 }

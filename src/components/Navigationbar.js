@@ -1,29 +1,85 @@
 import React from 'react';
-import { Navbar, Nav, Button,Row, Col, Media, Container } from 'react-bootstrap';
+import { Navbar, Nav, Button, Row, Col, Media, Container, ButtonGroup } from 'react-bootstrap';
 import PopoverStickOnHover from '../utils/PopoverStickOnHover';
 //import logo from '../assets/images/logo.svg';
 import logoman from '../assets/images/logoman.png';
 //import logowoman from '../assets/images/logowoman.png';
 
 //icons 
-import { PlayFill } from 'react-bootstrap-icons';
+import { PlayFill,PersonFill,StarFill,HandThumbsUpFill } from 'react-bootstrap-icons';
 
 function Navigationbar() {
+
     const Filter_Overlay = () => {
         return (
             <Row className="browse-tooltip-wrap justify-content-center">
                 <Col className="browse-tool-column">
-                    <Media>
-                        <PlayFill size={25} className="align-self-center mr-3" />
-                        <Media.Body>
-                            <h3 className="title">Anime</h3>
-                            <p className="sub-title">
-                                Top-Top-Top
-                        </p>
-
-                        </Media.Body>
-                    </Media>
+                    <Row>
+                        <Col className="col-2 icon">
+                            <Button>
+                                <PlayFill />
+                            </Button>
+                        </Col>
+                        <Col className="col-10 tab ">
+                            <Row className="links">
+                                <Col>
+                                    <Button className="title">Anime</Button>
+                                </Col>
+                                <Col>
+                                    <ButtonGroup className="mini-links" aria-label="Basic example">
+                                        <Button>Top 100</Button>
+                                        <Button>Trending</Button>
+                                        <Button>Top Movies</Button>
+                                    </ButtonGroup>
+                                </Col>
+                            </Row>
+                        </Col>
+                    </Row>
                 </Col>
+                <Col className="browse-tool-column">
+                    <Row>
+                        <Col className="col-2 icon">
+                            <Button>
+                                <PlayFill />
+                            </Button>
+                        </Col>
+                        <Col className="col-10 tab ">
+                            <Row className="links">
+                                <Col>
+                                    <Button className="title">Manga</Button>
+                                </Col>
+                                <Col>
+                                    <ButtonGroup className="mini-links" aria-label="Basic example">
+                                        <Button>Top 100</Button>
+                                        <Button>Trending</Button>
+                                        <Button>Top Manhwa</Button>
+                                    </ButtonGroup>
+                                </Col>
+                            </Row>
+                        </Col>
+                    </Row>
+                </Col>
+                <Col className="browse-tool-column box-column">
+                    <Row>
+                        <Col>
+                        <Button><PersonFill/> Staff</Button>
+                        </Col>
+                        <Col>
+                        <Button><StarFill/> Reviews</Button>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col>
+                        
+                        <Button><PersonFill/> Characters</Button>
+                        </Col>
+                        <Col>
+                        <Button><HandThumbsUpFill/> Recommendations</Button>
+                        </Col>
+                    </Row>
+                        
+                </Col>
+
             </Row>
         );
     };
@@ -42,18 +98,18 @@ function Navigationbar() {
                     />{' '}
                 </Navbar.Brand>
                 <Nav className="links-set-1">
-                    <PopoverStickOnHover component={<Filter_Overlay />} placement="bottom" onMouseEnter={() => { }} delay={200}>
-                        <Nav.Link href="#home">Browse</Nav.Link>
+                    <PopoverStickOnHover component={<Filter_Overlay />} placement="bottom-start" onMouseEnter={() => { }} delay={200}>
+                        <Nav.Link>Browse</Nav.Link>
                     </PopoverStickOnHover>
 
 
-                    <Nav.Link href="#social">Social</Nav.Link>
-                    <Nav.Link href="#forum">Forum</Nav.Link>
+                    <Nav.Link>Social</Nav.Link>
+                    <Nav.Link>Forum</Nav.Link>
                 </Nav>
 
                 <Nav className="links-set-2">
-                    <Nav.Link href="#forum">Login</Nav.Link>
-                    <Nav.Link href="#greek-translators"><Button size="sm">Sign Up</Button></Nav.Link>
+                    <Nav.Link>Login</Nav.Link>
+                    <Nav.Link><Button size="sm">Sign Up</Button></Nav.Link>
                 </Nav>
             </Container>
         </Navbar>

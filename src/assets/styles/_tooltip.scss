@@ -90,38 +90,3 @@ $tooltip-arrow-color:#ffffff;
   background-color:white;
   color:black;
 }
-.browse-tooltip-wrap{
-  display:flex;
-  flex-direction:column;
-  padding-bottom:0px;
-  
-  *{
-    font-size: 0.8rem;
-    font-weight: 600;
-    line-height: 1.5;
-    letter-spacing: 0.01em;
-    outline: 0;
-  }
-  .browse-tool-column{
-    width:300px;
-   
-    .media{
-      svg{
-        color:rgb(148, 148, 148);
-        height:25px;
-        justify-items:center;
-        background-color:red;
-      }
-      .title{
-        font-size: 1rem;
-        color:rgb(148, 148, 148);
-        text-align:left;
-      }
-      .sub-title{
-        text-align:left;
-        font-size: 0.6rem;
-        color:grey;
-      }
-    }
-  }
-}

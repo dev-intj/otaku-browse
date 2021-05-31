@@ -14,7 +14,7 @@ import Search_Button from "./components/Search_Button";
 
 // import react redux functionality
 import { connect } from 'react-redux';
-import { setFormat, setGenre, setYear, setSeason } from './actions';
+import { setFormat, setGenre, setYear, setSeason,setType } from './actions';
 import { withRouter } from 'react-router-dom';
 
 import data from "./components/FilterComponent-Data";
@@ -25,6 +25,7 @@ class SearchJSX extends Component {
     }
 
     render() {
+
         const years = [];
         for (var i = 1940; i < 2022; i++) {
             years.push(
@@ -47,7 +48,10 @@ class SearchJSX extends Component {
                     <Row>
                         {/* Hero Button */}
                         <Col className="d-lg-none d-md-block" lg={12}>
-                            <Hero_Button />
+                            <Hero_Button options={data.Browse_options} title="Browse"
+                            value={this.props.SearchReducer.type}
+                            onChange={value => { this.props.typeAction(value) }}                      
+                            />
                         </Col>
 
                         {/* Search Button*/}
@@ -60,19 +64,19 @@ class SearchJSX extends Component {
                         <Col md={9} className=" d-none d-sm-none d-lg-block d-md-none d-xl-block ">
                             <div className="filter_button_lg">
 
-                                <Filter_Button options={data.Genre_options} mode="Genres"
+                                <Filter_Button options={data.Genre_options} title="Genres"
                                     value={this.props.SearchReducer.genre}
                                     onChange={value => { this.props.genreAction(value) }} />
 
-                                <Filter_Button options={years} mode="Years"
+                                <Filter_Button options={years} title="Years"
                                     value={this.props.SearchReducer.year}
                                     onChange={value => { this.props.yearAction(value) }} />
 
-                                <Filter_Button options={data.Season_options} mode="Seasons"
+                                <Filter_Button options={data.Season_options} title="Seasons"
                                     value={this.props.SearchReducer.season}
                                     onChange={value => { this.props.seasonAction(value) }} />
 
-                                <Filter_Button options={data.Format_options} mode="Formats"
+                                <Filter_Button options={data.Format_options} title="Formats"
                                     value={this.props.SearchReducer.format}
                                     onChange={value => { this.props.formatAction(value) }} />
 
@@ -98,6 +102,7 @@ const mapStateToProps = (state) => ({
     ...state
 });
 const mapDispatchToProps = dispatch => ({
+    typeAction: (payload) => dispatch(setType(payload)),
     yearAction: (payload) => dispatch(setYear(payload)),
     genreAction: (payload) => dispatch(setGenre(payload)),
     seasonAction: (payload) => dispatch(setSeason(payload)),

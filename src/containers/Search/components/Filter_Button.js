@@ -14,11 +14,11 @@ class Filter_Button extends Component {
     this.handleSelect = this.handleSelect.bind(this);
   }
 
-  handleSelect = (e) => {
+  handleSelect = (event) => {
     if (this.props.location.pathname === '/') {
       this.props.history.push('/search')
     }
-    this.props.onChange(e);
+    this.props.onChange(this.state.options[event]);
   };
 
   render() {
@@ -27,10 +27,10 @@ class Filter_Button extends Component {
       let options = this.state.options;
       if (Array.isArray(options) && options.length) {
         return(
-        <DropdownButton id={this.props.mode} alignbottom="true" title={this.props.mode} onSelect={this.handleSelect}>
+        <DropdownButton id={this.props.title} alignbottom="true" title={this.props.title} onSelect={this.handleSelect}>
           
           {options.map((option, index) => (
-            <Dropdown.Item as="button" eventKey={option.value} key={index}>{option.label}</Dropdown.Item>
+            <Dropdown.Item as="button" eventKey={index} key={index}>{option.label}</Dropdown.Item>
           ))}
 
         </DropdownButton>
@@ -43,7 +43,7 @@ class Filter_Button extends Component {
     
     return (
       <Col>
-        <div className="name">{this.props.mode}</div>
+        <div className="name">{this.props.title}</div>
         <div className="select">
         <ConstructButton/>
         </div>

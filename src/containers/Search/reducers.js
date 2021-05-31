@@ -2,7 +2,7 @@ import { ActionTypes } from './constants';
 
 const defaultState = {
     search:'',
-    type: 'anime',
+    type: {value:'anime',label:'Anime'},
     genre: '',
     year: 2021,
     season: '',

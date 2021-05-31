@@ -1,12 +1,14 @@
+import axios from 'axios';
+
 let lastURL = ''
- 
-function buildquery(searchPAR) {
-  const type = searchPAR.type;
-  const season = searchPAR.season;
-  const year = searchPAR.year;
-  const genre = searchPAR.genre;
-  const format = searchPAR.format;
-  const search = searchPAR.search;
+
+function buildquery(params) {
+  const type = params.type['value'];
+  const season = params.season['value'];
+  const year = params.year['value'];
+  const genre = params.genre['value'];
+  const format = params.format['value'];
+  const search = params.search['value'];
   var url = '';
   if (search != '') {
     url = 'https://api.jikan.moe/v3/search/' + type + '?q=' + (!search ? '' : search) + (!genre ? '' : '&genre=' + genre) + (!year ? '' : '&year=' + year);
@@ -15,13 +17,15 @@ function buildquery(searchPAR) {
   }
   return (url);
 }
- 
-function get (params) {
+
+function buildURL(params) {
   let newUrl = buildquery(params)
   if (lastURL != newUrl) {
     lastURL = newUrl;
-    return axios.get(newUrl)
+    return (newUrl)
   }
 }
- 
-export default get
+
+
+
+export default buildURL;
