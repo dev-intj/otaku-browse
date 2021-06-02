@@ -1,6 +1,16 @@
 .CustomBar{
     .title{
-        padding-left:0;
+        padding:0;
+    }
+    .text-left{
+      float:left;
+      padding:0;
+      text-align:left;
+    }
+    .text-right{
+      float:right;
+      padding:0;
+      text-align:right;
     }
  .hero{
     font-size: 0.8rem;
@@ -8,6 +18,7 @@
     margin: 0;
     outline:1px;
     padding:0;
+    padding-bottom:8px;
  }
 }
 @media (max-width: 768px) {

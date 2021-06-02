@@ -1,5 +1,5 @@
 import React, { Component,useRef } from 'react';
-import { Tooltip, OverlayTrigger, Overlay, Button } from 'react-bootstrap';
+import { Tooltip, OverlayTrigger, Row, Button,Col } from 'react-bootstrap';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
 class Card extends Component {
@@ -14,8 +14,26 @@ class Card extends Component {
 
          const Card_Overlay = (props) => {
             return (
-                <Tooltip id="button-tooltip" {...props}>
-                    Simple tooltip
+                <Tooltip id="button-tooltip" {...props} className="card-tooltip">
+                    <Row>
+                        
+                        <Col className="title">EP AIRING IN 5 DAYS</Col>
+
+                        <Col className="description">
+                        <div className="title">Title</div>
+                        <div className="tags">DRAMA-COMEDY</div>
+                        </Col>
+
+                        <Col className="tags">
+                        <Button>Title</Button><Button>Title</Button>
+                        </Col>
+
+                    </Row>
+
+                    <Button className="score">
+                        75%
+                    </Button>
+
                 </Tooltip>
             )
         };
@@ -35,8 +53,8 @@ class Card extends Component {
         return (
             <Link to={Linkto}>
                 <OverlayTrigger
-                    placement="right"
-                    delay={{ show: 250, hide: 400 }}
+                    placement="auto-start"
+                    delay={{ show: 250, hide: 50 }}
                     overlay={Card_Overlay}>
                     <div> <Card_Interface /></div>
 

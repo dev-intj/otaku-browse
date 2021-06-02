@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import PropTypes from 'prop-types'
 
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col,Button } from 'react-bootstrap';
 
 import Card from "../components/Card";
 
@@ -51,10 +51,10 @@ class Custom_Bar extends Component {
                     <Col xs={12} xl={12} md={12} lg={12}>
                         <Row className="d-flex justify-content-between hero">
                             <Col className="title">
-                                <p className="title text-left">{this.props.title}</p>
+                                <Button className="text-left" variant="link">{this.props.title}</Button>
                             </Col>
-                            <Col>
-                                <p className="text-right">view all</p>
+                            <Col className="title">
+                            <Button className="text-right" variant="link">view all</Button>
                             </Col>
                         </Row>
 

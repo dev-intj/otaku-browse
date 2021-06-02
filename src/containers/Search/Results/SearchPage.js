@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Search from '../SearchBar';
+import SearchJSX from '../SearchBar';
 import { connect } from 'react-redux';
 import { Container, Spinner, Row, Col } from 'react-bootstrap';
 import axios from 'axios';
@@ -18,6 +18,27 @@ class SearchPage extends Component {
 
   render() {
     console.log(this.state.data)
+
+    const TagsSection = () => {
+      /* just debugging */
+      const type = this.props.SearchReducer.type['label'];
+      const season = this.props.SearchReducer.season['label'];
+      const year = this.props.SearchReducer.year['label'];
+      const genre = this.props.SearchReducer.genre['label'];
+      const format = this.props.SearchReducer.format['label'];
+      const search = this.props.SearchReducer.search;
+      return (
+        <>
+          <h1>genre: {genre}</h1>
+          <h1>season: {season}</h1>
+          <h1>year: {year}</h1>
+          <h1>format: {format}</h1>
+          <h1>search: {search}</h1>
+          <h1>type: {type}</h1>
+        </>
+      )
+    }
+
     const ResultsSection = () => {
       if (Array.isArray(this.state.data.results) && this.state.data.results) {
         const results = this.state.data.results;
@@ -39,48 +60,45 @@ class SearchPage extends Component {
       }
     }
 
-    // just debugging
-    const type = this.props.SearchReducer.type['label'];
-    const season = this.props.SearchReducer.season['label'];
-    const year = this.props.SearchReducer.year['label'];
-    const genre = this.props.SearchReducer.genre['label'];
-    const format = this.props.SearchReducer.format['label'];
-    const search = this.props.SearchReducer.search;
+
 
     return (
       <>
         <Navigationbar />
-        <Search />
+
+        <SearchJSX />
+
+        {/* showing "tags" based on active filters */}
         <Container>
-          <h1>genre: {genre}</h1>
-          <h1>season: {season}</h1>
-          <h1>year: {year}</h1>
-          <h1>format: {format}</h1>
-          <h1>search: {search}</h1>
-          <h1>type: {type}</h1>
+          <TagsSection />
         </Container>
+
         <Container>
           <ResultsSection />
         </Container>
       </>
     )
   }
-  
+
   sendGetRequest = async (url) => {
     try {
-        const resp = await axios.get(url);
-        this.setState({data:resp.data});
+      const resp = await axios.get(url);
+      this.setState({ data: resp.data });
     } catch (err) {
-        // Handle Error Here
-        console.error(err);
+      // Handle Error Here
+      console.error(err);
     }
   };
-  
+
   componentDidUpdate(previousProps, previousState) {
     if (previousProps.SearchReducer != this.props.SearchReducer) {
       let url = buildURL(this.props.SearchReducer);
       this.sendGetRequest(url)
     }
+  }
+  componentDidMount() {
+    let url = buildURL(this.props.SearchReducer);
+    this.sendGetRequest(url)
   }
 }
 

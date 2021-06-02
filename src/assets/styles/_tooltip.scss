@@ -1,92 +1,170 @@
-/* 
-
-//default variables
-$zindex-tooltip:                    1070 !default;
-
-// Tooltips
-
-$tooltip-font-size:                 0.8rem !default;
-$tooltip-max-width:                 200px !default;
-$tooltip-color:                     black !default;
-$tooltip-bg:                        #EDF1F5 !default;
-$tooltip-border-radius:             20px !default;
-$tooltip-opacity:                   1 !default;
-$tooltip-padding-y:                 .25rem !default;
-$tooltip-padding-x:                 .5rem !default;
-$tooltip-margin:                    0 !default;
-
-$tooltip-arrow-width:               .8rem !default;
-$tooltip-arrow-height:              .4rem !default;
-$tooltip-arrow-color:               #EDF1F5 !default;
-
-// Form tooltips must come after regular tooltips
-$form-feedback-tooltip-padding-y:     $tooltip-padding-y !default;
-$form-feedback-tooltip-padding-x:     $tooltip-padding-x !default;
-$form-feedback-tooltip-font-size:     0.8rem !default;
-$form-feedback-tooltip-line-height:   $line-height-base !default;
-$form-feedback-tooltip-opacity:       1 !default;
-$form-feedback-tooltip-border-radius: 20px !default;
-
-
-/* VARIABLES OF NAV: 
-bg:#EDF1F5;
-color:black;
-opacity:1;
-border-radius:20px;
-
-font-size: 0.8rem;
-    font-weight: 600;
-    line-height: 1.5;
-    letter-spacing: 0.01em;
-    outline: 0;
-*/
-$tooltip-arrow-color:#ffffff;
 // Base class
+$tooltip-opacity:1;
+$tooltip-arrow-color:white;
 .tooltip {
+  position: absolute;
+  z-index: $zindex-tooltip;
+  display: block;
+  margin: $tooltip-margin;
+  // Our parent element can be arbitrary since tooltips are by default inserted as a sibling of their target element.
+  // So reset our font and text properties to avoid inheriting weird values.
   @include reset-text();
-  @include font-size(0.8rem);
-  &.show { 
-    
-  }
+  @include font-size($tooltip-font-size);
+  // Allow breaking very long words so they don't overflow the tooltip's bounds
+  word-wrap: break-word;
+  opacity: 0;
+
+  &.show { opacity: $tooltip-opacity; }
 
   .arrow {
+    position: absolute;
+    display: block;
+    width: $tooltip-arrow-width;
+    height: $tooltip-arrow-height;
 
     &::before {
+      position: absolute;
+      content: "";
+      border-color: transparent;
+      border-style: solid;
     }
   }
 }
 
 .bs-tooltip-top {
+  padding: $tooltip-arrow-height 0;
+
   .arrow {
+    bottom: 0;
+
     &::before {
+      top: 0;
+      border-width: $tooltip-arrow-height ($tooltip-arrow-width / 2) 0;
       border-top-color: $tooltip-arrow-color;
     }
   }
 }
-.bs-tooltip-bottom {
-  .arrow {
-    &::before {
-      border-bottom-color:$tooltip-arrow-color;
-    }
-  }
-}
+
 .bs-tooltip-right {
+  padding: 0 $tooltip-arrow-height;
+
   .arrow {
+    left: 0;
+    width: $tooltip-arrow-height;
+    height: $tooltip-arrow-width;
+
     &::before {
+      right: 0;
+      border-width: ($tooltip-arrow-width / 2) $tooltip-arrow-height ($tooltip-arrow-width / 2) 0;
       border-right-color: $tooltip-arrow-color;
     }
   }
 }
-.bs-tooltip-left {
+
+.bs-tooltip-bottom {
+  padding: $tooltip-arrow-height 0;
+
   .arrow {
+    top: 0;
+
     &::before {
+      bottom: 0;
+      border-width: 0 ($tooltip-arrow-width / 2) $tooltip-arrow-height;
+      border-bottom-color: $tooltip-arrow-color;
+    }
+  }
+}
+
+.bs-tooltip-left {
+  padding: 0 $tooltip-arrow-height;
+
+  .arrow {
+    right: 0;
+    width: $tooltip-arrow-height;
+    height: $tooltip-arrow-width;
+
+    &::before {
+      left: 0;
+      border-width: ($tooltip-arrow-width / 2) 0 ($tooltip-arrow-width / 2) $tooltip-arrow-height;
       border-left-color: $tooltip-arrow-color;
     }
   }
 }
 
+.bs-tooltip-auto {
+  &[x-placement^="top"] {
+    @extend .bs-tooltip-top;
+  }
+  &[x-placement^="right"] {
+    @extend .bs-tooltip-right;
+  }
+  &[x-placement^="bottom"] {
+    @extend .bs-tooltip-bottom;
+  }
+  &[x-placement^="left"] {
+    @extend .bs-tooltip-left;
+  }
+}
+
 // Wrapper for the tooltip content
 .tooltip-inner {
-  background-color:white;
-  color:black;
+  max-width: $tooltip-max-width;
+  padding: $tooltip-padding-y $tooltip-padding-x;
+  color: $tooltip-color;
+  text-align: center;
+  background-color: $tooltip-bg;
+  @include border-radius($tooltip-border-radius);
+}
+
+.card-tooltip{
+  .row{
+    flex-direction:column
+  }
+  .tooltip-inner {
+    min-width:320px;
+    
+    padding:1rem;
+    text-align:left;
+    color: black;
+    background-color: white;
+
+    .title{
+      font-size:1.2rem;
+      font-weight:500;
+    }
+
+    .description{
+      padding-top:8px;
+      padding-bottom:8px;
+      .title{    
+        font-size:1rem;
+        font-weight:500;
+      }
+      .tags{
+        font-size:1rem;
+        font-weight:400;
+      }
+    }
+    
+
+    .tags{
+      button{
+        margin-right:5px;
+        padding: 2px 8px 2px 8px;
+        font-size:0.8rem;
+        font-weight:500;
+        border-radius:5px;
+        background-color:blue;
+        color:white;
+      }
+    }
+    
+    .score{
+      position:absolute;
+      top:15%;
+      right:5%;
+    }
+
+  }
+
 }
