@@ -1,4 +1,4 @@
-import React, { Component,useRef } from 'react';
+import React, { Component } from 'react';
 import { Tooltip, OverlayTrigger, Row, Button,Col } from 'react-bootstrap';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
@@ -10,7 +10,9 @@ class Card extends Component {
 
         const details = this.props.details;
         // "/" = doesnt work, but "/ " does work, the problem with that, it's that if I reload the page, it forgets the space
-        const Linkto = '/details' + this.props.type + '/' + details.mal_id + '/' + details.title + "/overview";
+        const title = this.props.details.title?.replace(/[^A-Z0-9]/ig, '')
+        const Linkto = '/details' + this.props.type + '/' + details.mal_id + '/' + title + "/overview";
+
 
          const Card_Overlay = (props) => {
             return (

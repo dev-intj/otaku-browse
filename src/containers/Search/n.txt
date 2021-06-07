@@ -1,0 +1,30 @@
+        //building button blocks based on state type
+        const SwitchButtons = () => {
+            const type = this.props.SearchReducer.type;
+            switch (type.value) {
+                case 'anime':
+                    return (
+                        <></>
+                    )
+                case 'manga':
+                    return (
+                        <></>
+                    )
+                case 'characters':
+                    return (
+                        <></>
+                    )
+                case 'staff':
+                    return (
+                        <></>
+                    )
+                case 'studios':
+                    return (
+                        <></>
+                    )
+                case 'users':
+                    return (
+                        <></>
+                    )
+            }
+        }

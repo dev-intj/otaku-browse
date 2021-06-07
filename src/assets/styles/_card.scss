@@ -28,8 +28,11 @@
     text-overflow: ellipsis;
   }
   :hover {
+    a{
+      text-decoration: none;
+    }
     .card-title {
-      color: red;
+      color: #3577FF;
     }
   }
 }

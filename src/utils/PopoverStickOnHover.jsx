@@ -76,6 +76,7 @@ export default class PopoverStickOnHover extends React.Component {
           shouldUpdatePosition={true}
         >
           <Popover
+            className={this.props.class_name}
             onMouseEnter={() => {
               this.setState({ showPopover: true })
             }}

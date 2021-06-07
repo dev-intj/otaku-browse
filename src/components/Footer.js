@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Container } from 'react-bootstrap';
 
-export default class React_Footer extends Component {
+export default class ReactFooter extends Component {
     render() {
         return (
 

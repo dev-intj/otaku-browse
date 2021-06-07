@@ -22,6 +22,7 @@ class DetailCard extends Component {
     }
 
     async componentDidMount() {
+        window.scrollTo(0, 0)
         const type = this.props.match.params.type;
         const id = this.props.match.params.id;
         const title = this.props.match.params.title;

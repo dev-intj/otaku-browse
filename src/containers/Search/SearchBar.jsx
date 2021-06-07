@@ -14,7 +14,7 @@ import Search_Button from "./components/Search_Button";
 
 // import react redux functionality
 import { connect } from 'react-redux';
-import { setFormat, setGenre, setYear, setSeason,setType } from './actions';
+import { setFormat, setGenre, setYear, setSeason, setType } from './actions';
 import { withRouter } from 'react-router-dom';
 
 import data from "./components/FilterComponent-Data";
@@ -25,7 +25,7 @@ class SearchJSX extends Component {
     }
 
     render() {
-
+        //building years button
         const years = [];
         for (var i = 1940; i < 2022; i++) {
             years.push(
@@ -38,7 +38,21 @@ class SearchJSX extends Component {
 
         const Filter_Overlay = () => {
             return (
-                <h1>test</h1>
+                <div className="">
+                    <Row>
+                        
+                    <Filter_Button options={data.Genre_options} title="Genres"
+                                value={this.props.SearchReducer.genre}
+                                onChange={value => { this.props.genreAction(value) }} />
+                            <Filter_Button options={data.Genre_options} title="Genres"
+                                value={this.props.SearchReducer.genre}
+                                onChange={value => { this.props.genreAction(value) }} />
+                            <Filter_Button options={data.Genre_options} title="Genres"
+                                value={this.props.SearchReducer.genre}
+                                onChange={value => { this.props.genreAction(value) }} />
+                    </Row>
+                </div>
+
             );
         };
 
@@ -48,10 +62,13 @@ class SearchJSX extends Component {
                     <Row>
                         {/* Hero Button */}
                         <Col className="d-lg-none d-md-block" lg={12}>
-                            <Hero_Button options={data.Browse_options} title="Browse"
-                            value={this.props.SearchReducer.type}
-                            onChange={value => { this.props.typeAction(value) }}                      
-                            />
+
+                            <Hero_Button
+                                options={data.Browse_options}
+                                title="Browse"
+                                value={this.props.SearchReducer.type}
+                                onChange={value => { this.props.typeAction(value) }} />
+
                         </Col>
 
                         {/* Search Button*/}
@@ -86,7 +103,7 @@ class SearchJSX extends Component {
                         {/* Button Burger */}
                         <Col xs={1} sm={1} md={1} lg={1} xl={1}>
                             <div className="name d-none d-sm-none d-lg-block d-md-none d-xl-block">&nbsp;</div>
-                            <PopoverStickOnHover component={<Filter_Overlay />} placement="bottom" onMouseEnter={() => { }} delay={200}>
+                            <PopoverStickOnHover class_name="filter-overlay" component={<Filter_Overlay />} placement="bottom-end" onMouseEnter={() => { }} delay={200}>
                                 <Button className="filter_burger"><Sliders color="grey" /></Button>
                             </PopoverStickOnHover>
                         </Col>
@@ -110,6 +127,6 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const connectToStore = connect(mapStateToProps, mapDispatchToProps)
-const ConnectedComponent = connectToStore(SearchJSX)
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SearchJSX));
+
+export default withRouter(connectToStore(SearchJSX));

@@ -46,7 +46,7 @@ class SearchPage extends Component {
           <Row className="d-flex align-items-center justify-content-center results_section">
             {results.map((material, index) =>
               <Col>
-                <Card details={material} type={'/' + this.state.type} key={index} />
+                <Card details={material} type={'/' + this.props.SearchReducer.type['value']} key={index} />
               </Col>
             )}
           </Row>

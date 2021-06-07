@@ -1,6 +1,7 @@
 .CustomBar{
     .title{
         padding:0;
+        
     }
     .text-left{
       float:left;
@@ -24,6 +25,7 @@
 @media (max-width: 768px) {
     .CustomBar {
       .r{
+        padding-bottom:2rem;
         .anilist-card{
             float:right;
         }
